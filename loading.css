@@ -1,0 +1,15 @@
+h1 {
+    font-size: 50px;
+}
+.load {
+    border: 10px solid black;
+    border-radius: 50%;
+    border-top: 10px solid white;
+    width: 60px;
+    height: 60px;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
