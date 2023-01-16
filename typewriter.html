@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>efeito maquina de escrever</title>
+    <style>
+        #elementEl::after {
+            content: '|';
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="elementEl">Gustavo Tonolli</h1>
+    <script>
+     'use strict';
+     function typeWriter(el) {   
+        const textArray = el.innerHTML.split('');
+        el.innerHTML = '';
+        textArray.forEach((letter, i) => {
+            setTimeout(() => (el.innerHTML += letter), 95 * i)
+
+        });
+
+        setInterval(() => typeWriter(el), 6000);
+     }
+     typeWriter(elementEl)
+    </script>
+</body>
+</html>
